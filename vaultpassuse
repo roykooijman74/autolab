@@ -1,0 +1,21 @@
+bigip_user: "admin" 
+bigip_pass: "N3wAutomation"
+
+student7@ip-10-11-1-36:~/Roy/autolab$ ansible-vault encrypt_string 'admin' --name 'bigip_user' 
+New Vault password: Roy
+Confirm New Vault password: Roy
+bigip_user: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          37393564393738386661356463333466626438366362323732643761336165323361663335343235
+          3633613137616130326538303333336638663238663065620a633736643232656537383330346238
+          64343365313338316439356438613832393061643365333661626261303332663639316632623732
+          3362333363633566660a323130623361393061646135313433636438373636363131633732383437
+          3430
+Encryption successful
+student7@ip-10-11-1-36:~/Roy/autolab$ 
+
+
+
+Student7@ip-10-11-1-36:~/Roy/autolab$ ansible-playbook ./as3-playbook.yaml --ask-vault-pass
+Vault password: 
+[WARNING]: provided hosts list is empty, onl
